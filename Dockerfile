@@ -1,11 +1,11 @@
-FROM dockerfile/nodejs
+FROM dockerfile/iojs
 # replace this with your application's default port
 
 WORKDIR /data
 RUN git clone https://github.com/ircanywhere/ircanywhere
 
 WORKDIR ircanywhere
-RUN git checkout development
+RUN git checkout master
 
 RUN mkdir build
 RUN wget http://downloads.mongodb.org/linux/mongodb-linux-x86_64-2.6.6.tgz --directory-prefix=./build
